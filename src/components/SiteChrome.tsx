@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { HeroCarousel } from './HeroCarousel';
 
 type Theme = 'dark' | 'light';
 
@@ -389,8 +390,8 @@ export function SiteChrome({
                 </a>
               </div>
             </div>
-            <div className="hero-mark hero-reveal" aria-hidden="true">
-              <BrandMarkLarge size={160} />
+            <div className="hero-reveal">
+              <HeroCarousel />
             </div>
           </div>
         </header>

@@ -392,10 +392,88 @@ body::after {
 }
 .hero-mark svg { width: 70%; height: 70%; }
 
+/* ---------- Hero carousel (product/tool sample images) ---------- */
+.hero-carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+.hero-carousel-stack {
+    position: relative;
+    width: 280px;
+    height: 280px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-strong);
+    box-shadow:
+        0 0 40px var(--accent-glow),
+        0 20px 60px rgba(0, 0, 0, 0.55);
+    background: #000;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.hero-carousel:hover .hero-carousel-stack {
+    transform: scale(1.015);
+    box-shadow: 0 0 48px rgba(255, 107, 0, 0.28), 0 20px 60px rgba(0, 0, 0, 0.55);
+}
+.hero-carousel-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.hero-carousel-slide svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.hero-carousel-slide.active { opacity: 1; }
+.hero-carousel-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: var(--accent);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255, 107, 0, 0.4);
+    border-radius: 2px;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    pointer-events: none;
+    z-index: 2;
+}
+.hero-carousel-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+.hero-carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: var(--border-strong);
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+.hero-carousel-dot:hover { background: var(--accent-hover); transform: scale(1.2); }
+.hero-carousel-dot.active {
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent-glow);
+}
+
 @media (max-width: 768px) {
     .hero { padding: 110px 20px 44px; }
     .hero-inner { grid-template-columns: 1fr; gap: 28px; }
     .hero-mark { width: 120px; height: 120px; order: -1; }
+    .hero-carousel { order: -1; }
+    .hero-carousel-stack { width: 200px; height: 200px; }
 }
 
 @keyframes orbit-slow {
