@@ -5,11 +5,14 @@
 
 import { ApiKeyGate } from './components/ApiKeyGate';
 import { BatchGenerator } from './components/BatchGenerator';
+import { SiteChrome } from './components/SiteChrome';
 
 export default function App() {
   return (
-    <ApiKeyGate>
-      <BatchGenerator />
-    </ApiKeyGate>
+    <SiteChrome>
+      <ApiKeyGate>
+        <BatchGenerator />
+      </ApiKeyGate>
+    </SiteChrome>
   );
 }

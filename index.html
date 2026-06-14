@@ -1,13 +1,37 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Atelier Image — Batch Image Generator</title>
+    <meta name="description" content="Atelier Image — a batch image generator built on Gemini 3 Flash. Compose prompts, anchor styles, queue generations." />
+    <meta name="theme-color" content="#000000" />
+
+    <!-- Fonts (preconnect + import) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+TC:wght@700&display=swap"
+    />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%23000'/><rect x='0.5' y='0.5' width='31' height='31' rx='3.5' fill='none' stroke='%23FF6B00' stroke-width='0.5' opacity='0.3'/><circle cx='3.2' cy='3.2' r='0.5' fill='%23FF6B00' opacity='0.4'/><circle cx='28.8' cy='3.2' r='0.5' fill='%23FF6B00' opacity='0.4'/><circle cx='3.2' cy='28.8' r='0.5' fill='%23FF6B00' opacity='0.4'/><circle cx='28.8' cy='28.8' r='0.5' fill='%23FF6B00' opacity='0.4'/><text x='16' y='19' text-anchor='middle' font-family='Songti TC, Songti SC, Noto Serif TC, serif' font-size='18' font-weight='700' fill='%23FF6B00'>%E5%90%B3</text><line x1='12' y1='22.5' x2='20' y2='22.5' stroke='%23FF6B00' stroke-width='0.3' opacity='0.5'/><text x='16' y='28.5' text-anchor='middle' font-family='Space Mono, monospace' font-size='5' font-weight='700' letter-spacing='1' fill='%23FF6B00' opacity='0.85'>IMG</text></svg>" />
+    <script>
+      // Restore theme before first paint to avoid flash
+      (function() {
+        try {
+          var saved = localStorage.getItem('theme');
+          if (!saved) {
+            saved = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', saved);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
+    <a href="#main" class="skip-link">Skip to content</a>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-
