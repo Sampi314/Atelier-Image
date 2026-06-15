@@ -11,9 +11,9 @@
 <div align="center">
 
 ```
-+--[ Atelier-Image ]----------------------------------------------+
-|  browser-based image studio - edit, organise, export
-+------------------------------------------------------------+
+┌─[ Atelier-Image ]────────────────────────────────────────────────────┐
+│  browser-based image studio - edit, organise, export                 │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
 </div>
@@ -114,9 +114,9 @@ Tracked in the [**Sampi314 Portfolio Roadmap**](https://github.com/users/Sampi31
 <div align="center">
 
 ```
-+--[ end of transmission ]------------------------------------+
-|  github.com/Sampi314/Atelier-Image
-+------------------------------------------------------------+
+┌─[ end of transmission ]──────────────────────────────────────────────┐
+│  github.com/Sampi314/Atelier-Image                                   │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
 </div>
