@@ -1010,6 +1010,7 @@ body::after {
 
 .atelier-sidebar-body {
     flex: 1;
+    min-height: 0;
     overflow-y: auto;
     padding: 16px;
     display: flex;
@@ -1082,6 +1083,7 @@ body::after {
     overflow: hidden;
     transition: border-color 0.25s ease;
     position: relative;
+    flex-shrink: 0;
 }
 .prompt-panel:hover { border-color: var(--border-strong); }
 .prompt-panel::before {
